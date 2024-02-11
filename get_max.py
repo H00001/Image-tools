@@ -1,8 +1,5 @@
 def get_value(file_path):
-    accs = []
-    nmis = []
-    aris = []
-    f1s = []
+    accs, nmis, aris, f1s = [],[],[],[]
     with open(file_path, 'r') as file:
         lines = file.readlines()
         for line in lines:
