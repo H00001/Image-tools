@@ -11,10 +11,7 @@ def get_value(file_path):
             f1s.append(float(values[3].split()[1].strip()))
     return accs, nmis, aris, f1s
 
-def get_final_metrics(file_path):
-    _1, _2, _3, _4 = get_value(file_path)
-    return _1[-1], _2[-1], _3[-1], _4[-1]
+get_final_metrics = lambda file_path: [metrics[-1] for metrics in get_value(file_path)]
 
-def get_max_metrics(file_path):
-    _1, _2, _3, _4 = get_value(file_path)
-    return max(_1), max(_2), max(_3), max(_4)
+
+get_max_metrics = lambda file_path: [max(metrics) for metrics in get_value(file_path)]
