@@ -1,6 +1,6 @@
 import os
 import numpy as np
-from get_max import get_max_metrics
+from get_max import get_final_metrics
 
 def process_files(folder_path):
     accs = []
@@ -9,12 +9,12 @@ def process_files(folder_path):
     f1s = []
     # Iterate over all files in the folder
     for filename in os.listdir(folder_path):
-        if filename.endswith(".txt"):  # Assuming your files have a .txt extension
+        if filename.endswith(".out"):  # Assuming your files have a .txt extension
             file_path = os.path.join(folder_path, filename)
 
             # Get max metrics for the current file
-            max_acc, max_nmi, max_ari, max_f1 = get_max_metrics(file_path)
-            print(f"{filename}\t{max_acc}\t{max_ari}\t{max_nmi}\t{max_f1}")
+            max_acc, max_nmi, max_ari, max_f1 = get_final_metrics(file_path)
+            #print(f"{filename}\t{max_acc}\t{max_ari}\t{max_nmi}\t{max_f1}")
             accs.append(max_acc)
             aris.append(max_ari)
             nmis.append(max_nmi)
@@ -23,14 +23,18 @@ def process_files(folder_path):
     return accs,nmis,aris,f1s
 
 # Replace 'your_folder_path' with the actual path to your folder containing the files
-folder_path = './res/AFR-AGC_ours/acm'
-accs,nmis,aris,f1s = process_files(folder_path)
+li = ['acm','reut','usps','hhar','cite']
+for i in li:
+    folder_path = f'./data/{i}'
+    accs,nmis,aris,f1s = process_files(folder_path)
+    print(f"data_{i} = np.array([")
 
-
-print(accs)
-print(nmis)
-print(aris)
-print(f1s)
+    print(nmis,",")
+    print(aris,",")
+    print(f1s,",")
+    # 
+    print(accs,",")
+    print("])")
 
 
 acc_mean_value = np.mean(accs)
