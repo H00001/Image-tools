@@ -79,4 +79,4 @@ ax.set_zlabel('Score (%)')
 ax.set_zlim(0, 1)
 ax.grid(False)
 
-plt.show()
+plt.show(dpi=600)
