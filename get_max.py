@@ -13,5 +13,4 @@ def get_value(file_path):
 
 get_final_metrics = lambda file_path: [metrics[-1] for metrics in get_value(file_path)]
 
-
 get_max_metrics = lambda file_path: [max(metrics) for metrics in get_value(file_path)]
