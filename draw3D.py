@@ -30,7 +30,6 @@ data_hhar = np.array([
 [0.7192, 0.88, 0.8346, 0.6944, 0.4881] ,
 ])
 data_cite = np.array([
-
 [0.4422, 0.4471, 0.4347, 0.4018, 0.3567] ,
 [0.4737, 0.4799, 0.4436, 0.3923, 0.3512] ,
 [0.6278, 0.6329, 0.6216, 0.6261, 0.5983] ,
@@ -67,16 +66,16 @@ for y, color in zip(np.unique(ypos), colors):
 # ax.bar3d(xpos, ypos, zpos, dx, dy, dz, color=plt.cm.viridis(dz/float(max(dz))), zsort='average')
 
 # 设置坐标轴标签
-ax.set_xticks(np.arange(data.shape[1]))  # 设置刻度位置
+ax.set_xticks(np.arange(data.shape[1])+ 0.5)  # 设置刻度位置
 ax.set_xticklabels(['0.01', '0.1', '1', '10', '100'])
-ax.set_yticks(np.arange(data.shape[0])+0.5)
+ax.set_yticks(np.arange(data.shape[0])+0.7)
 ax.set_yticklabels(['NMI', 'ARI', 'F1','ACC'])
 ax.set_xlabel('λ')
 ax.set_ylabel('Metrics')
-ax.set_zlabel('Score (%)')
+ax.set_zlabel('Score')
 
 # 设置Z轴限制
 ax.set_zlim(0, 1)
 ax.grid(False)
 
-plt.show(dpi=600)
+plt.show()
