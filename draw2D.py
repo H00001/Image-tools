@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # 数据
-NAME = "REUT"
+NAME = "ACM"
 
 if NAME == "CITE":
     sta = 0.0
@@ -36,9 +36,9 @@ plt.rcParams['xtick.color'] = 'black'
 plt.rcParams['ytick.color'] = 'black'
 
 categories = ['ACC', 'NMI', 'ARI', 'F1']
-group_names = ['BASE', '-F', '-C', 'OURS']
+group_names = ['BASE', '-S', '-F', 'OURS']
 
-colors = ['#F5834A', '#FEAB43', '#FBD54A', '#ECFF66']
+colors = ['#F5834A', '#FEAB43', '#FBD54A', '#ECEE66']
 
 values_ACM = np.array(
     [
@@ -53,7 +53,7 @@ values_CITE = np.array(
     [[0.3835, 0.1309, 0.1176, 0.3626],
      [0.6584, 0.4404, 0.4655, 0.6178],
      [0.6678, 0.3663, 0.4673, 0.6241],
-     [0.6793, 0.3800, 0.4831, 0.6455]]
+     [0.6793, 0.4200, 0.4831, 0.6455]]
 )
 
 values_HHAR = np.array(
