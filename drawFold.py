@@ -3,12 +3,11 @@ import matplotlib.pyplot as plt
 max_acc_per_round = []
 max_nmi_per_round = []
 max_ari_per_round = []
-
 max_f1_per_round = []
 
 
 
-name = "ACM"
+name = "DBLP"
 with open(f'fold/{name}.txt', 'r') as file:
     while True:
         # 读取3行
@@ -42,6 +41,7 @@ with open(f'fold/{name}.txt', 'r') as file:
 
 
 plt.rcParams["font.family"] = "Times New Roman"
+plt.rcParams["font.weight"] = "bold"
 x_values = range(1, 201)
 markers = ['o', 's', '^', 'd']
 colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd']

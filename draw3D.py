@@ -61,7 +61,6 @@ for y, color in zip(np.unique(ypos), colors):
     ax.bar3d(xpos[ypos == y], ypos[ypos == y], zpos[ypos == y], dx, dy, dz[ypos == y], color=color, zsort='average',edgecolor='black',alpha = i)
     i+=0.1
 
-
 # 绘制3D条形图
 # ax.bar3d(xpos, ypos, zpos, dx, dy, dz, color=plt.cm.viridis(dz/float(max(dz))), zsort='average')
 
